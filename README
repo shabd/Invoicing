@@ -1,0 +1,15 @@
+1. Create a virtual enviroment 
+2. pip3 install -r requirements.txt
+3. Run Application :  python manage.py runserver 0.0.0.0:5000
+
+** if you having issues connecting to the database :
+sudo -u postgres psql
+CREATE DATABASE invoices;
+CREATE USER shabd WITH PASSWORD 'password';
+ALTER ROLE shabd SET client_encoding TO 'utf8';
+ALTER ROLE shabd SET default_transaction_isolation TO 'read committed';
+ALTER ROLE shabd SET timezone TO 'UTC';
+GRANT ALL PRIVILEGES ON DATABASE invoices TO shabd;
+\q
+
+# or you can create your own DB and change the config in settings.py for DATABASES
